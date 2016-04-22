@@ -23,6 +23,8 @@ function cache_git {
 if [ -z "$1" ]
 then
     throw_error
+    read -p "Message : " commit_message
+    add_commit_push "$commit_message"
 else
     cache_git "1800"
     add_commit_push "$1"
